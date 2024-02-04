@@ -44,10 +44,17 @@ namespace Assignment2
             return length;
         }
 
-        // A setter method to set the rectangle length
+        // A setter method to set the rectangle length as long as its bigger than 0 and smaller than 1100
         public int SetLength(int length)
         {
-            this.length = length;
+            if (length < 1100 && length > 0)
+            {
+                this.length = length;
+            }
+            else
+            {
+                this.length = 1;
+            }
             return length;
         }
 
@@ -57,10 +64,17 @@ namespace Assignment2
             return width;
         }
 
-        // A setter method to set the rectangle width
+        // A setter method to set the rectangle width as long as its bigger than 0 and smaller than 1100
         public int SetWidth(int width)
         {
-            this.width = width;
+            if (width < 1100 && width > 0)
+            {
+                this.width = width;
+            }
+            else
+            {
+                this.width = 1;
+            }
             return width;
         }
 
