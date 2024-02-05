@@ -1,13 +1,16 @@
-﻿using System;
+﻿/*
+ * Program: PROG2070-SEC8
+ * Purpose: Assignment 2
+ * Revision History:
+ *      created by Stefan Kobetich, Dahyun Ko, Feb/4/2024
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-/* Rectangle.cs class
- * Rectangle class, is the main class of the program.
- * Created by Stefan
- * Created on 2/4/2024
- */
+
 
 namespace Assignment2
 {
@@ -24,14 +27,14 @@ namespace Assignment2
 
         }
         
-        // Default constructor of the class
+        // Default constructor that initialize the length & width as 1.
         public Rectangle()
         {
             SetLength(1);
             SetWidth(1);
         }
 
-        // Constructor with params 
+        // Constructor with params that sets the length & width as user inputs.
         public Rectangle(int length, int width)
         {
             SetLength(length);

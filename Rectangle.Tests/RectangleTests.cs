@@ -1,8 +1,15 @@
+/*
+ * Program: PROG2070-SEC8
+ * Purpose: Assignment 2
+ * Revision History:
+ *      created by Stefan Kobetich, Dahyun Ko, Feb/4/2024
+ */
+
 using Assignment2;
 
 namespace Assignment2.Tests
 {
-    public class Tests
+    public class RectangleTests
     {
         private Rectangle _rectangle { get; set; } = null;
 
@@ -14,7 +21,7 @@ namespace Assignment2.Tests
 
         // Unit tests for the GetLength function
         [Test]
-        public void Test1()
+        public void TestGetLength1()
         {
             // Assign
             // Nohing to Assign, using default constructor
@@ -26,7 +33,7 @@ namespace Assignment2.Tests
             Assert.AreEqual(1, length);
         }
         [Test]
-        public void Test2()
+        public void TestGetLength2()
         {
             // Assign using the parem constructor
             _rectangle = new Rectangle(10, 15);
@@ -38,7 +45,7 @@ namespace Assignment2.Tests
             Assert.AreEqual(10, length);
         }
         [Test]
-        public void Test3()
+        public void TestGetLength3()
         {
             // Assign
             _rectangle.SetLength(936);
@@ -51,7 +58,7 @@ namespace Assignment2.Tests
 
         // Unit tests for the GetWidth function
         [Test]
-        public void Test4()
+        public void TestGetWidth1()
         {
             // Assign
             // Nohing to Assign, using default constructor
@@ -63,7 +70,7 @@ namespace Assignment2.Tests
             Assert.AreEqual(1, width);
         }
         [Test]
-        public void Test5()
+        public void TestGetWidth2()
         {
             // Assign using the parem constructor
             _rectangle = new Rectangle(10, 15);
@@ -75,7 +82,7 @@ namespace Assignment2.Tests
             Assert.AreEqual(15, width);
         }
         [Test]
-        public void Test6()
+        public void TestGetWidth3()
         {
             // Assign
             _rectangle.SetWidth(462);
@@ -85,5 +92,40 @@ namespace Assignment2.Tests
             // Assert
             Assert.AreEqual(462, width);
         }
+
+        // Unit tests for the SetLength function
+        [TestCase(50)]
+        [TestCase(150)]
+        [TestCase(500)]
+        public void TestSetLength(int testLength)
+        {
+            // Assign
+            _rectangle.SetLength(testLength);
+            // Act
+            var length = _rectangle.GetLength();
+
+            // Assert
+            Assert.AreEqual(testLength, length);
+        }
+
+        // Unit tests for the SetWidth function
+
+        [TestCase(-50)]
+        [TestCase(1101)]
+        [TestCase(1300)]
+        public void TestSetWidth(int testWidth)
+        {
+            // Assign
+            _rectangle.SetWidth(testWidth);
+            // Act
+            var expectedResult = 1;
+            var width = _rectangle.GetWidth();
+
+            // Assert
+            Assert.AreEqual(expectedResult, width);
+        }
+        // Unit tests for the GetPerimeter function
+        // Unit tests for the GetArea function
+
     }
 }
