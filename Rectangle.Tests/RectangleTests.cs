@@ -100,32 +100,63 @@ namespace Assignment2.Tests
         public void TestSetLength(int testLength)
         {
             // Assign
+            var expectedResult = testLength;
             _rectangle.SetLength(testLength);
+
             // Act
             var length = _rectangle.GetLength();
 
             // Assert
-            Assert.AreEqual(testLength, length);
+            Assert.AreEqual(expectedResult, length);
         }
 
         // Unit tests for the SetWidth function
-
         [TestCase(-50)]
         [TestCase(1101)]
         [TestCase(1300)]
         public void TestSetWidth(int testWidth)
         {
             // Assign
-            _rectangle.SetWidth(testWidth);
-            // Act
             var expectedResult = 1;
+            _rectangle.SetWidth(testWidth);
+
+            // Act
             var width = _rectangle.GetWidth();
 
             // Assert
             Assert.AreEqual(expectedResult, width);
         }
         // Unit tests for the GetPerimeter function
-        // Unit tests for the GetArea function
+        [TestCase(4, 9)]
+        [TestCase(37, 58)]
+        [TestCase(129, 80)]
+        public void TestGetPerimeter(int testLength, int testWidth)
+        {
+            // Assign
+            var expectedResult = (testLength * 2) + (testWidth * 2);
+            _rectangle = new Rectangle(testLength, testWidth);
 
+            // Act
+            var perimeter = _rectangle.GetPerimeter();
+
+            // Assert
+            Assert.AreEqual(expectedResult, perimeter);
+        }
+        // Unit tests for the GetArea function
+        [TestCase(5, 8)]
+        [TestCase(63, 27)]
+        [TestCase(243, 197)]
+        public void TestGetArea(int testLength, int testWidth)
+        {
+            // Assign
+            var expectedResult = testLength * testWidth;
+            _rectangle = new Rectangle(testLength, testWidth);
+
+            // Act
+            var area = _rectangle.GetArea();
+
+            // Assert
+            Assert.AreEqual(expectedResult, area);
+        }
     }
 }
